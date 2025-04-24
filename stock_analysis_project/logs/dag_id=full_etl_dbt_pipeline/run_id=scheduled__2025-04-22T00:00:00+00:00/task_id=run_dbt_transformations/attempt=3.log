@@ -1,0 +1,188 @@
+[2025-04-23T19:50:15.018+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-23T19:50:15.030+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations scheduled__2025-04-22T00:00:00+00:00 [queued]>
+[2025-04-23T19:50:15.035+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations scheduled__2025-04-22T00:00:00+00:00 [queued]>
+[2025-04-23T19:50:15.035+0000] {taskinstance.py:2865} INFO - Starting attempt 3 of 4
+[2025-04-23T19:50:15.045+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): run_dbt_transformations> on 2025-04-22 00:00:00+00:00
+[2025-04-23T19:50:15.052+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'full_etl_dbt_pipeline', 'run_dbt_transformations', 'scheduled__2025-04-22T00:00:00+00:00', '--job-id', '250', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_pipeline.py', '--cfg-path', '/tmp/tmpfjcwneap']
+[2025-04-23T19:50:15.055+0000] {standard_task_runner.py:105} INFO - Job 250: Subtask run_dbt_transformations
+[2025-04-23T19:50:15.055+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4096) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-23T19:50:15.056+0000] {standard_task_runner.py:72} INFO - Started process 4113 to run task
+[2025-04-23T19:50:15.102+0000] {task_command.py:467} INFO - Running <TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations scheduled__2025-04-22T00:00:00+00:00 [running]> on host aab73994fc52
+[2025-04-23T19:50:15.173+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='full_etl_dbt_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_transformations' AIRFLOW_CTX_EXECUTION_DATE='2025-04-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-22T00:00:00+00:00'
+[2025-04-23T19:50:15.175+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-23T19:50:15.177+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-23T19:50:15.177+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'export PATH="$PATH:/home/***/.local/bin" && cd "$DBT_PROJECT_DIR" && dbt run --profiles-dir "$DBT_PROJECT_DIR/config" && dbt test --profiles-dir "$DBT_PROJECT_DIR/config" && dbt snapshot --profiles-dir "$DBT_PROJECT_DIR/config"']
+[2025-04-23T19:50:15.185+0000] {subprocess.py:86} INFO - Output:
+[2025-04-23T19:50:15.210+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:15.210+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:15.284+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:15.285+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:15.285+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:15.285+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:15.286+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:15.286+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:15.286+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:15.287+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:15.287+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:15.288+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:15.288+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:15.288+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:15.288+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:15.288+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:15.289+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:15.289+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:17.395+0000] {subprocess.py:93} INFO - [0m19:50:17  Running with dbt=1.9.4
+[2025-04-23T19:50:18.172+0000] {subprocess.py:93} INFO - [0m19:50:18  Registered adapter: snowflake=1.9.2
+[2025-04-23T19:50:18.202+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:18.203+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:18.289+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:18.290+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:18.291+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:18.291+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:18.292+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:18.292+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:18.292+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:18.293+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:18.294+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:18.294+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:18.295+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:18.295+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:18.295+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:18.296+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:18.296+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:18.296+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:18.431+0000] {subprocess.py:93} INFO - [0m19:50:18  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-23T19:50:18.431+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-04-23T19:50:18.432+0000] {subprocess.py:93} INFO - - models.stock_analysis_project.stock_data
+[2025-04-23T19:50:18.595+0000] {subprocess.py:93} INFO - [0m19:50:18  Found 4 models, 1 snapshot, 2 data tests, 474 macros
+[2025-04-23T19:50:18.597+0000] {subprocess.py:93} INFO - [0m19:50:18
+[2025-04-23T19:50:18.598+0000] {subprocess.py:93} INFO - [0m19:50:18  Concurrency: 1 threads (target='dev')
+[2025-04-23T19:50:18.598+0000] {subprocess.py:93} INFO - [0m19:50:18
+[2025-04-23T19:50:19.289+0000] {subprocess.py:93} INFO - [0m19:50:19  1 of 4 START sql view model analytics.moving_avg ............................... [RUN]
+[2025-04-23T19:50:19.612+0000] {subprocess.py:93} INFO - [0m19:50:19  1 of 4 OK created sql view model analytics.moving_avg .......................... [[32mSUCCESS 1[0m in 0.32s]
+[2025-04-23T19:50:19.614+0000] {subprocess.py:93} INFO - [0m19:50:19  2 of 4 START sql view model analytics.raw_stock_data ........................... [RUN]
+[2025-04-23T19:50:19.900+0000] {subprocess.py:93} INFO - [0m19:50:19  2 of 4 OK created sql view model analytics.raw_stock_data ...................... [[32mSUCCESS 1[0m in 0.28s]
+[2025-04-23T19:50:19.902+0000] {subprocess.py:93} INFO - [0m19:50:19  3 of 4 START sql view model analytics.rsi ...................................... [RUN]
+[2025-04-23T19:50:20.117+0000] {subprocess.py:93} INFO - [0m19:50:20  3 of 4 OK created sql view model analytics.rsi ................................. [[32mSUCCESS 1[0m in 0.21s]
+[2025-04-23T19:50:20.119+0000] {subprocess.py:93} INFO - [0m19:50:20  4 of 4 START sql view model analytics.stock_metrics ............................ [RUN]
+[2025-04-23T19:50:20.394+0000] {subprocess.py:93} INFO - [0m19:50:20  4 of 4 OK created sql view model analytics.stock_metrics ....................... [[32mSUCCESS 1[0m in 0.27s]
+[2025-04-23T19:50:20.479+0000] {subprocess.py:93} INFO - [0m19:50:20
+[2025-04-23T19:50:20.480+0000] {subprocess.py:93} INFO - [0m19:50:20  Finished running 4 view models in 0 hours 0 minutes and 1.88 seconds (1.88s).
+[2025-04-23T19:50:20.522+0000] {subprocess.py:93} INFO - [0m19:50:20
+[2025-04-23T19:50:20.522+0000] {subprocess.py:93} INFO - [0m19:50:20  [32mCompleted successfully[0m
+[2025-04-23T19:50:20.523+0000] {subprocess.py:93} INFO - [0m19:50:20
+[2025-04-23T19:50:20.523+0000] {subprocess.py:93} INFO - [0m19:50:20  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-04-23T19:50:21.537+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:21.538+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:21.622+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:21.623+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:21.623+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:21.623+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:21.624+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:21.624+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:21.624+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:21.625+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:21.626+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:21.626+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:21.627+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:21.627+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:21.627+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:21.627+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:21.628+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:21.628+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:24.272+0000] {subprocess.py:93} INFO - [0m19:50:24  Running with dbt=1.9.4
+[2025-04-23T19:50:25.114+0000] {subprocess.py:93} INFO - [0m19:50:25  Registered adapter: snowflake=1.9.2
+[2025-04-23T19:50:25.147+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:25.148+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:25.236+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:25.237+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:25.237+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:25.238+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:25.238+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:25.239+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:25.239+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:25.240+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:25.241+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:25.241+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:25.241+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:25.241+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:25.242+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:25.242+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:25.242+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:25.243+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:25.374+0000] {subprocess.py:93} INFO - [0m19:50:25  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-23T19:50:25.375+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-04-23T19:50:25.375+0000] {subprocess.py:93} INFO - - models.stock_analysis_project.stock_data
+[2025-04-23T19:50:25.570+0000] {subprocess.py:93} INFO - [0m19:50:25  Found 4 models, 1 snapshot, 2 data tests, 474 macros
+[2025-04-23T19:50:25.572+0000] {subprocess.py:93} INFO - [0m19:50:25
+[2025-04-23T19:50:25.573+0000] {subprocess.py:93} INFO - [0m19:50:25  Concurrency: 1 threads (target='dev')
+[2025-04-23T19:50:25.574+0000] {subprocess.py:93} INFO - [0m19:50:25
+[2025-04-23T19:50:26.104+0000] {subprocess.py:93} INFO - [0m19:50:26  1 of 2 START test not_null_stock_metrics_close ................................. [RUN]
+[2025-04-23T19:50:26.318+0000] {subprocess.py:93} INFO - [0m19:50:26  1 of 2 PASS not_null_stock_metrics_close ....................................... [[32mPASS[0m in 0.21s]
+[2025-04-23T19:50:26.320+0000] {subprocess.py:93} INFO - [0m19:50:26  2 of 2 START test not_null_stock_metrics_symbol ................................ [RUN]
+[2025-04-23T19:50:26.462+0000] {subprocess.py:93} INFO - [0m19:50:26  2 of 2 PASS not_null_stock_metrics_symbol ...................................... [[32mPASS[0m in 0.14s]
+[2025-04-23T19:50:26.605+0000] {subprocess.py:93} INFO - [0m19:50:26
+[2025-04-23T19:50:26.607+0000] {subprocess.py:93} INFO - [0m19:50:26  Finished running 2 data tests in 0 hours 0 minutes and 1.03 seconds (1.03s).
+[2025-04-23T19:50:26.695+0000] {subprocess.py:93} INFO - [0m19:50:26
+[2025-04-23T19:50:26.697+0000] {subprocess.py:93} INFO - [0m19:50:26  [32mCompleted successfully[0m
+[2025-04-23T19:50:26.698+0000] {subprocess.py:93} INFO - [0m19:50:26
+[2025-04-23T19:50:26.700+0000] {subprocess.py:93} INFO - [0m19:50:26  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[2025-04-23T19:50:27.643+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:27.644+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:27.734+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:27.735+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:27.736+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:27.736+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:27.737+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:27.737+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:27.737+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:27.740+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:27.740+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:27.741+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:27.741+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:27.742+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:27.742+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:27.743+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:27.743+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:27.743+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:29.991+0000] {subprocess.py:93} INFO - [0m19:50:29  Running with dbt=1.9.4
+[2025-04-23T19:50:30.821+0000] {subprocess.py:93} INFO - [0m19:50:30  Registered adapter: snowflake=1.9.2
+[2025-04-23T19:50:30.851+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:30.852+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:30.945+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:30.945+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:30.946+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:30.946+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:30.947+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:30.947+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:30.947+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:30.949+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:50:30.950+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:30.950+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:50:30.951+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:50:30.952+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:50:30.952+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:50:30.952+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:50:30.953+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:50:30.953+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:50:31.090+0000] {subprocess.py:93} INFO - [0m19:50:31  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-23T19:50:31.090+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-04-23T19:50:31.090+0000] {subprocess.py:93} INFO - - models.stock_analysis_project.stock_data
+[2025-04-23T19:50:31.246+0000] {subprocess.py:93} INFO - [0m19:50:31  Found 4 models, 1 snapshot, 2 data tests, 474 macros
+[2025-04-23T19:50:31.249+0000] {subprocess.py:93} INFO - [0m19:50:31
+[2025-04-23T19:50:31.250+0000] {subprocess.py:93} INFO - [0m19:50:31  Concurrency: 1 threads (target='dev')
+[2025-04-23T19:50:31.250+0000] {subprocess.py:93} INFO - [0m19:50:31
+[2025-04-23T19:50:31.943+0000] {subprocess.py:93} INFO - [0m19:50:31  1 of 1 START snapshot snapshots.stock_snapshot ................................. [RUN]
+[2025-04-23T19:50:34.709+0000] {subprocess.py:93} INFO - [0m19:50:34  1 of 1 OK snapshotted snapshots.stock_snapshot ................................. [[32mSUCCESS 0[0m in 2.76s]
+[2025-04-23T19:50:34.796+0000] {subprocess.py:93} INFO - [0m19:50:34
+[2025-04-23T19:50:34.796+0000] {subprocess.py:93} INFO - [0m19:50:34  Finished running 1 snapshot in 0 hours 0 minutes and 3.54 seconds (3.54s).
+[2025-04-23T19:50:34.840+0000] {subprocess.py:93} INFO - [0m19:50:34
+[2025-04-23T19:50:34.841+0000] {subprocess.py:93} INFO - [0m19:50:34  [32mCompleted successfully[0m
+[2025-04-23T19:50:34.842+0000] {subprocess.py:93} INFO - [0m19:50:34
+[2025-04-23T19:50:34.842+0000] {subprocess.py:93} INFO - [0m19:50:34  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-04-23T19:50:35.635+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-04-23T19:50:35.662+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-23T19:50:35.662+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=full_etl_dbt_pipeline, task_id=run_dbt_transformations, run_id=scheduled__2025-04-22T00:00:00+00:00, execution_date=20250422T000000, start_date=20250423T195015, end_date=20250423T195035
+[2025-04-23T19:50:35.716+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-23T19:50:35.730+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-23T19:50:35.731+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

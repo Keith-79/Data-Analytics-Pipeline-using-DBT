@@ -1,0 +1,218 @@
+[2025-04-23T19:39:02.570+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-23T19:39:02.584+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations manual__2025-04-23T19:08:54.037348+00:00 [queued]>
+[2025-04-23T19:39:02.589+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations manual__2025-04-23T19:08:54.037348+00:00 [queued]>
+[2025-04-23T19:39:02.589+0000] {taskinstance.py:2865} INFO - Starting attempt 4 of 5
+[2025-04-23T19:39:02.598+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): run_dbt_transformations> on 2025-04-23 19:08:54.037348+00:00
+[2025-04-23T19:39:02.605+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'full_etl_dbt_pipeline', 'run_dbt_transformations', 'manual__2025-04-23T19:08:54.037348+00:00', '--job-id', '245', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_pipeline.py', '--cfg-path', '/tmp/tmpg3j5yn2y']
+[2025-04-23T19:39:02.608+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=3227) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-23T19:39:02.609+0000] {standard_task_runner.py:72} INFO - Started process 3230 to run task
+[2025-04-23T19:39:02.609+0000] {standard_task_runner.py:105} INFO - Job 245: Subtask run_dbt_transformations
+[2025-04-23T19:39:02.649+0000] {task_command.py:467} INFO - Running <TaskInstance: full_etl_dbt_pipeline.run_dbt_transformations manual__2025-04-23T19:08:54.037348+00:00 [running]> on host aab73994fc52
+[2025-04-23T19:39:02.756+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='full_etl_dbt_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_transformations' AIRFLOW_CTX_EXECUTION_DATE='2025-04-23T19:08:54.037348+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-23T19:08:54.037348+00:00'
+[2025-04-23T19:39:02.759+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-23T19:39:02.763+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-23T19:39:02.765+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'export PATH="$PATH:/home/***/.local/bin" && cd "$DBT_PROJECT_DIR" && dbt run --profiles-dir "$DBT_PROJECT_DIR/config" && dbt test --profiles-dir "$DBT_PROJECT_DIR/config" && dbt snapshot --profiles-dir "$DBT_PROJECT_DIR/config"']
+[2025-04-23T19:39:02.771+0000] {subprocess.py:86} INFO - Output:
+[2025-04-23T19:39:02.799+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:02.799+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:02.881+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:02.882+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:02.882+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:02.882+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:02.883+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:02.883+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:02.883+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:02.884+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:02.884+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:02.884+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:02.885+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:02.885+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:02.885+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:02.885+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:02.885+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:02.886+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:04.880+0000] {subprocess.py:93} INFO - [0m19:39:04  Running with dbt=1.9.4
+[2025-04-23T19:39:05.651+0000] {subprocess.py:93} INFO - [0m19:39:05  Registered adapter: snowflake=1.9.2
+[2025-04-23T19:39:05.686+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:05.687+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:05.773+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:05.774+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:05.774+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:05.775+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:05.776+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:05.777+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:05.778+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:05.778+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:05.780+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:05.781+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:05.784+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:05.785+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:05.785+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:05.785+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:05.786+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:05.786+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:06.399+0000] {subprocess.py:93} INFO - [0m19:39:06  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-23T19:39:06.400+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-04-23T19:39:06.403+0000] {subprocess.py:93} INFO - - models.stock_analysis_project.stock_data
+[2025-04-23T19:39:06.597+0000] {subprocess.py:93} INFO - [0m19:39:06  Found 6 models, 6 data tests, 1 snapshot, 474 macros
+[2025-04-23T19:39:06.600+0000] {subprocess.py:93} INFO - [0m19:39:06
+[2025-04-23T19:39:06.600+0000] {subprocess.py:93} INFO - [0m19:39:06  Concurrency: 1 threads (target='dev')
+[2025-04-23T19:39:06.601+0000] {subprocess.py:93} INFO - [0m19:39:06
+[2025-04-23T19:39:07.323+0000] {subprocess.py:93} INFO - [0m19:39:07  1 of 6 START sql view model analytics.moving_avg ............................... [RUN]
+[2025-04-23T19:39:07.651+0000] {subprocess.py:93} INFO - [0m19:39:07  1 of 6 OK created sql view model analytics.moving_avg .......................... [[32mSUCCESS 1[0m in 0.32s]
+[2025-04-23T19:39:07.654+0000] {subprocess.py:93} INFO - [0m19:39:07  2 of 6 START sql table model analytics.my_first_dbt_model ...................... [RUN]
+[2025-04-23T19:39:08.761+0000] {subprocess.py:93} INFO - [0m19:39:08  2 of 6 OK created sql table model analytics.my_first_dbt_model ................. [[32mSUCCESS 1[0m in 1.11s]
+[2025-04-23T19:39:08.764+0000] {subprocess.py:93} INFO - [0m19:39:08  3 of 6 START sql view model analytics.raw_stock_data ........................... [RUN]
+[2025-04-23T19:39:08.978+0000] {subprocess.py:93} INFO - [0m19:39:08  3 of 6 OK created sql view model analytics.raw_stock_data ...................... [[32mSUCCESS 1[0m in 0.21s]
+[2025-04-23T19:39:08.981+0000] {subprocess.py:93} INFO - [0m19:39:08  4 of 6 START sql view model analytics.rsi ...................................... [RUN]
+[2025-04-23T19:39:09.250+0000] {subprocess.py:93} INFO - [0m19:39:09  4 of 6 OK created sql view model analytics.rsi ................................. [[32mSUCCESS 1[0m in 0.27s]
+[2025-04-23T19:39:09.252+0000] {subprocess.py:93} INFO - [0m19:39:09  5 of 6 START sql view model analytics.my_second_dbt_model ...................... [RUN]
+[2025-04-23T19:39:09.441+0000] {subprocess.py:93} INFO - [0m19:39:09  5 of 6 OK created sql view model analytics.my_second_dbt_model ................. [[32mSUCCESS 1[0m in 0.19s]
+[2025-04-23T19:39:09.443+0000] {subprocess.py:93} INFO - [0m19:39:09  6 of 6 START sql view model analytics.stock_metrics ............................ [RUN]
+[2025-04-23T19:39:09.731+0000] {subprocess.py:93} INFO - [0m19:39:09  6 of 6 OK created sql view model analytics.stock_metrics ....................... [[32mSUCCESS 1[0m in 0.29s]
+[2025-04-23T19:39:09.816+0000] {subprocess.py:93} INFO - [0m19:39:09
+[2025-04-23T19:39:09.816+0000] {subprocess.py:93} INFO - [0m19:39:09  Finished running 1 table model, 5 view models in 0 hours 0 minutes and 3.21 seconds (3.21s).
+[2025-04-23T19:39:09.860+0000] {subprocess.py:93} INFO - [0m19:39:09
+[2025-04-23T19:39:09.860+0000] {subprocess.py:93} INFO - [0m19:39:09  [32mCompleted successfully[0m
+[2025-04-23T19:39:09.861+0000] {subprocess.py:93} INFO - [0m19:39:09
+[2025-04-23T19:39:09.862+0000] {subprocess.py:93} INFO - [0m19:39:09  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[2025-04-23T19:39:10.726+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:10.726+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:10.801+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:10.801+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:10.802+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:10.802+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:10.802+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:10.802+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:10.803+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:10.804+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:10.804+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:10.804+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:10.804+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:10.805+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:10.805+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:10.805+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:10.805+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:10.805+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:12.793+0000] {subprocess.py:93} INFO - [0m19:39:12  Running with dbt=1.9.4
+[2025-04-23T19:39:13.611+0000] {subprocess.py:93} INFO - [0m19:39:13  Registered adapter: snowflake=1.9.2
+[2025-04-23T19:39:13.641+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:13.642+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:13.739+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:13.740+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:13.740+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:13.740+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:13.740+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:13.741+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:13.741+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:13.742+0000] {subprocess.py:93} INFO - Error processing line 2 of /home/***/.local/lib/python3.12/site-packages/sqlalchemy_spanner-1.7.0-py3.9-nspkg.pth:
+[2025-04-23T19:39:13.743+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:13.744+0000] {subprocess.py:93} INFO -   Traceback (most recent call last):
+[2025-04-23T19:39:13.745+0000] {subprocess.py:93} INFO -     File "<frozen site>", line 206, in addpackage
+[2025-04-23T19:39:13.747+0000] {subprocess.py:93} INFO -     File "<string>", line 1, in <module>
+[2025-04-23T19:39:13.747+0000] {subprocess.py:93} INFO -     File "<frozen importlib._bootstrap>", line 810, in module_from_spec
+[2025-04-23T19:39:13.747+0000] {subprocess.py:93} INFO -   AttributeError: 'NoneType' object has no attribute 'loader'
+[2025-04-23T19:39:13.748+0000] {subprocess.py:93} INFO - 
+[2025-04-23T19:39:13.748+0000] {subprocess.py:93} INFO - Remainder of file ignored
+[2025-04-23T19:39:13.883+0000] {subprocess.py:93} INFO - [0m19:39:13  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-23T19:39:13.884+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-04-23T19:39:13.886+0000] {subprocess.py:93} INFO - - models.stock_analysis_project.stock_data
+[2025-04-23T19:39:14.043+0000] {subprocess.py:93} INFO - [0m19:39:14  Found 6 models, 6 data tests, 1 snapshot, 474 macros
+[2025-04-23T19:39:14.046+0000] {subprocess.py:93} INFO - [0m19:39:14
+[2025-04-23T19:39:14.047+0000] {subprocess.py:93} INFO - [0m19:39:14  Concurrency: 1 threads (target='dev')
+[2025-04-23T19:39:14.048+0000] {subprocess.py:93} INFO - [0m19:39:14
+[2025-04-23T19:39:14.607+0000] {subprocess.py:93} INFO - [0m19:39:14  1 of 6 START test not_null_my_first_dbt_model_id ............................... [RUN]
+[2025-04-23T19:39:15.035+0000] {subprocess.py:93} INFO - [0m19:39:15  1 of 6 FAIL 1 not_null_my_first_dbt_model_id ................................... [[31mFAIL 1[0m in 0.43s]
+[2025-04-23T19:39:15.036+0000] {subprocess.py:93} INFO - [0m19:39:15  2 of 6 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[2025-04-23T19:39:15.458+0000] {subprocess.py:93} INFO - [0m19:39:15  2 of 6 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 0.42s]
+[2025-04-23T19:39:15.460+0000] {subprocess.py:93} INFO - [0m19:39:15  3 of 6 START test not_null_stock_metrics_close ................................. [RUN]
+[2025-04-23T19:39:15.881+0000] {subprocess.py:93} INFO - [0m19:39:15  3 of 6 PASS not_null_stock_metrics_close ....................................... [[32mPASS[0m in 0.42s]
+[2025-04-23T19:39:15.883+0000] {subprocess.py:93} INFO - [0m19:39:15  4 of 6 START test not_null_stock_metrics_symbol ................................ [RUN]
+[2025-04-23T19:39:16.270+0000] {subprocess.py:93} INFO - [0m19:39:16  4 of 6 PASS not_null_stock_metrics_symbol ...................................... [[32mPASS[0m in 0.39s]
+[2025-04-23T19:39:16.272+0000] {subprocess.py:93} INFO - [0m19:39:16  5 of 6 START test unique_my_first_dbt_model_id ................................. [RUN]
+[2025-04-23T19:39:16.473+0000] {subprocess.py:93} INFO - [0m19:39:16  5 of 6 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 0.20s]
+[2025-04-23T19:39:16.475+0000] {subprocess.py:93} INFO - [0m19:39:16  6 of 6 START test unique_my_second_dbt_model_id ................................ [RUN]
+[2025-04-23T19:39:16.624+0000] {subprocess.py:93} INFO - [0m19:39:16  6 of 6 PASS unique_my_second_dbt_model_id ...................................... [[32mPASS[0m in 0.15s]
+[2025-04-23T19:39:16.739+0000] {subprocess.py:93} INFO - [0m19:39:16
+[2025-04-23T19:39:16.739+0000] {subprocess.py:93} INFO - [0m19:39:16  Finished running 6 data tests in 0 hours 0 minutes and 2.69 seconds (2.69s).
+[2025-04-23T19:39:16.781+0000] {subprocess.py:93} INFO - [0m19:39:16
+[2025-04-23T19:39:16.782+0000] {subprocess.py:93} INFO - [0m19:39:16  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-04-23T19:39:16.782+0000] {subprocess.py:93} INFO - [0m19:39:16
+[2025-04-23T19:39:16.783+0000] {subprocess.py:93} INFO - [0m19:39:16  [31mFailure in test not_null_my_first_dbt_model_id (models/example/schema.yml)[0m
+[2025-04-23T19:39:16.784+0000] {subprocess.py:93} INFO - [0m19:39:16    Got 1 result, configured to fail if != 0
+[2025-04-23T19:39:16.785+0000] {subprocess.py:93} INFO - [0m19:39:16
+[2025-04-23T19:39:16.785+0000] {subprocess.py:93} INFO - [0m19:39:16    compiled code at target/compiled/stock_analysis_project/models/example/schema.yml/not_null_my_first_dbt_model_id.sql
+[2025-04-23T19:39:16.786+0000] {subprocess.py:93} INFO - [0m19:39:16
+[2025-04-23T19:39:16.786+0000] {subprocess.py:93} INFO - [0m19:39:16  Done. PASS=5 WARN=0 ERROR=1 SKIP=0 TOTAL=6
+[2025-04-23T19:39:17.472+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-04-23T19:39:17.481+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-23T19:39:17.487+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=full_etl_dbt_pipeline, task_id=run_dbt_transformations, run_id=manual__2025-04-23T19:08:54.037348+00:00, execution_date=20250423T190854, start_date=20250423T193902, end_date=20250423T193917
+[2025-04-23T19:39:17.499+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-23T19:39:17.500+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 245 for task run_dbt_transformations (Bash command failed. The command returned a non-zero exit code 1.; 3230)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-23T19:39:17.535+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-23T19:39:17.546+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-23T19:39:17.547+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,31 @@
+[2025-04-23T19:08:55.825+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-23T19:08:55.844+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.fetch_stock_data manual__2025-04-23T19:08:54.037348+00:00 [queued]>
+[2025-04-23T19:08:55.852+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: full_etl_dbt_pipeline.fetch_stock_data manual__2025-04-23T19:08:54.037348+00:00 [queued]>
+[2025-04-23T19:08:55.853+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-04-23T19:08:55.867+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): fetch_stock_data> on 2025-04-23 19:08:54.037348+00:00
+[2025-04-23T19:08:55.881+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'full_etl_dbt_pipeline', 'fetch_stock_data', 'manual__2025-04-23T19:08:54.037348+00:00', '--job-id', '234', '--raw', '--subdir', 'DAGS_FOLDER/run_dbt_pipeline.py', '--cfg-path', '/tmp/tmpsww5uuzr']
+[2025-04-23T19:08:55.885+0000] {standard_task_runner.py:105} INFO - Job 234: Subtask fetch_stock_data
+[2025-04-23T19:08:55.887+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1049) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-23T19:08:55.888+0000] {standard_task_runner.py:72} INFO - Started process 1056 to run task
+[2025-04-23T19:08:55.940+0000] {task_command.py:467} INFO - Running <TaskInstance: full_etl_dbt_pipeline.fetch_stock_data manual__2025-04-23T19:08:54.037348+00:00 [running]> on host aab73994fc52
+[2025-04-23T19:08:56.022+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='full_etl_dbt_pipeline' AIRFLOW_CTX_TASK_ID='fetch_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-23T19:08:54.037348+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-23T19:08:54.037348+00:00'
+[2025-04-23T19:08:56.025+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-23T19:08:56.376+0000] {python.py:240} INFO - Done. Returned value was:                          Date Symbol  ...       Close     Volume
+0   2024-08-05 00:00:00-04:00   NVDA  ...  100.425247  552842400
+1   2024-08-06 00:00:00-04:00   NVDA  ...  104.224312  409012100
+2   2024-08-07 00:00:00-04:00   NVDA  ...   98.885635  411440400
+3   2024-08-08 00:00:00-04:00   NVDA  ...  104.944138  391910000
+4   2024-08-09 00:00:00-04:00   NVDA  ...  104.724190  290844200
+..                        ...    ...  ...         ...        ...
+175 2025-04-16 00:00:00-04:00   AAPL  ...  194.270004   59732400
+176 2025-04-17 00:00:00-04:00   AAPL  ...  196.979996   51334300
+177 2025-04-21 00:00:00-04:00   AAPL  ...  193.160004   46742500
+178 2025-04-22 00:00:00-04:00   AAPL  ...  199.740005   52660200
+179 2025-04-23 00:00:00-04:00   AAPL  ...  204.970001   36651757
+
+[360 rows x 7 columns]
+[2025-04-23T19:08:56.477+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-23T19:08:56.478+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=full_etl_dbt_pipeline, task_id=fetch_stock_data, run_id=manual__2025-04-23T19:08:54.037348+00:00, execution_date=20250423T190854, start_date=20250423T190855, end_date=20250423T190856
+[2025-04-23T19:08:56.526+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-23T19:08:56.554+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-23T19:08:56.556+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
