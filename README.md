@@ -33,6 +33,6 @@ An end-to-end data pipeline using **Airflow**, **Snowflake**, **dbt**, and **Sup
 Includes:
 - Closing price trend
 - MA14 vs MA50
-- Symbol/date filters
+
 
 
